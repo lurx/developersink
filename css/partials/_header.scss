@@ -86,12 +86,10 @@ HEADER {
 				color: getColor('bg');
 				@for $i from 1 through $nav-items {
 					&:nth-child(#{$i}) {
-						//transition-delay: $transition-time /($i*1);
-						//transition-delay: ($nav-items*$transition-time)-($i*$transition-time);
 						transition-delay: (($nav-items - 1) * $transition-time)-(($i - 1) * $transition-time);
 					}
 				}
-				SPAN {
+				& > SPAN, & > A {
 					display: inline-block;
 					width: 100%;
 					padding: $spacing;

@@ -1,13 +1,14 @@
 .blog-post {
-	padding: $spacing;
+	padding: $spacing $spacing $spacing*2;
+	margin: 0 0 $spacing;
+	border-bottom: 2px solid getColor('a');
 	transition: 0.3s padding $transition-delay;
 	
-	.headerImg {
-		max-width: 100%;
-		margin: $spacing/2 0 $spacing;
-	}
-	.postContent {
-		font-size: 1.25rem;
+
+
+
+
+	font-size: 1.25rem;
 		font-weight: 100;
 		P {
 			line-height: 1.5;
@@ -34,14 +35,15 @@
 			background: rgba(getColor('fg'), 0.1);
 			padding: $spacing*1.5 $spacing*2;
 			margin: $spacing*1.5 $spacing*1.5 $spacing/2;
+			quotes: "\“" "\”" "\‘" "\’";
 			&:before {
-				content: '“';
+				content: '\201C';
 				top: -1.5rem;
 				left: -1.5rem;
 
 			}
 			&:after {
-				content: '„';
+				content: '\201D';
 				bottom: -1rem;
 				right: -1.5rem;
 			}
@@ -65,6 +67,17 @@
 		.cp_embed_wrapper {
 			padding: $spacing*1.5;
 		}
+
+
+
+
+
+	.headerImg {
+		max-width: 100%;
+		margin: $spacing/2 0 $spacing;
+	}
+	.postContent {
+		
 
 	}
 	@include respond-to(smartphone) {

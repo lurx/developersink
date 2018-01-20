@@ -2,7 +2,7 @@
 	<h2 class="postTitle blog-post-title"><?php the_title(); ?></h2>
 	<p class="blog-post-meta">By <a href="#" title="a class=\'test'\"><?php the_author(); ?></a>
 		<span class="socialLinks">
-			social="<a href="javascript:void(0);" class="socialLink twitter"><i class="fa fa-twitter"></i></a><a href="javascript:void(0);" class="socialLink facebook"><i class="fa fa-facebook-official"></i></a>"
+			social="<a href="javascript:void(0);" class="socialLink twitter"><i class="fab fa-twitter"></i></a><a href="javascript:void(0);" class="socialLink facebook"><i class="fab fa-facebook-square"></i></a>"
 		</span>
 		date="<span class="postDate"><?php the_date(); ?></span>"</p>
 	<img src="https://lorempixel.com/1800/600/technics/" alt="" class="headerImg" />

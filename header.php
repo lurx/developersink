@@ -7,14 +7,17 @@
     </a>
     <nav id="nav">
         <ul>
-            <li class="active"><span data-target="postarchive">Blog</span></li>
-            <li><span data-target="blogpost">About</span></li>
-            <li><span data-target="references">References</span></li>
-            <li><span data-target="contact">Contact</span></li>
+            <li class="active"><span>Blog</span></li>
+            <li><span>About</span></li>
+            <li><span>References</span></li>
+            <li><span>Contact</span></li>
             <li class="search">
                 <input type="text" placeholder="Search">
                 <i class="fa fa-search"></i>
             </li>
+            <li>123</li>
+            <?php wp_list_pages( '&title_li=' ); ?>
         </ul>
+        <?php get_search_form(); ?>
     </nav>
 </header>

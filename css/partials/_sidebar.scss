@@ -9,13 +9,9 @@
     z-index: 2;
     background: getColor("bg");
     padding: $spacing;
-    // .sidebar-inner {
-    //     position: relative;
-    //     padding: $spacing;
-    // }
 
     &:hover {
-        box-shadow: -1px 0 5px gold;
+        box-shadow: -1px 0 5vh getColor('blk');
     }
     .sidebar-toggle-label {
         padding: $spacing;
@@ -25,6 +21,7 @@
         position: absolute;
         top: 0;
         cursor: pointer;
+        box-shadow: -1px 0 5vh getColor('blk');
     }
 
     SECTION {
@@ -52,7 +49,7 @@ $max-sidebar-sections: 12;
     display: none;
     &:checked ~ .sidebar-wrapper {
         right: 0;
-        box-shadow: -1px 0 5px gold;
+        box-shadow: -1px 0 5vh getColor('blk');
         SECTION {
             transform: translateX(0);
             @for $i from $max-sidebar-sections through 1 {
