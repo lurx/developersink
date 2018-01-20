@@ -31,7 +31,7 @@
 				<a class="innerWrapper">
 					<label for="navToggle" class="logo"><img src="http://blog.rotemdev.com/wp-content/uploads/2017/06/cropped-plumber-icon-white2.png" alt="" /></label>
 					<h1><?php echo get_bloginfo( 'name' ); ?></h1>
-					<p class="subtitle"><?php echo get_bloginfo( 'description' ); ?> test</p>
+					<p class="subtitle"><?php echo get_bloginfo( 'description' ); ?></p>
 					<?/*a.front-end {developer:blog;}*/?>
 				</a>
 				<nav id="nav">
