@@ -35,7 +35,7 @@
 			background: rgba(getColor('fg'), 0.1);
 			padding: $spacing*1.5 $spacing*2;
 			margin: $spacing*1.5 $spacing*1.5 $spacing/2;
-			quotes: "\“" "\”" "\‘" "\’";
+
 			&:before {
 				content: '\201C';
 				top: -1.5rem;

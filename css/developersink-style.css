@@ -419,8 +419,7 @@ MAIN {
     position: relative;
     background: rgba(255, 255, 255, 0.1);
     padding: 1.5rem 2rem;
-    margin: 1.5rem 1.5rem 0.5rem;
-    quotes: "\ΓÇ£" "\ΓÇ¥" "\ΓÇÿ" "\ΓÇÖ"; }
+    margin: 1.5rem 1.5rem 0.5rem; }
     .blog-post blockquote:before {
       content: '\201C';
       top: -1.5rem;
