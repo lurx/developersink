@@ -33,7 +33,7 @@
 			<main>
 				<div class="bracket">{</div>
 				<div class="inner">
-					<div class="content le-scroll-bar">
+					<div class="content init-scrollbar">
 						<?php if ( have_posts() ): while ( have_posts() ): the_post(); ?>
 							<?php get_template_part('content', get_post_format());?>
 						<?php endwhile; endif; ?>

@@ -288,19 +288,17 @@ HEADER {
   top: 0;
   right: -15%;
   transition: 0.4s all;
-  position: relative;
+  position: absolute;
   z-index: 2;
-  background: #333; }
-  .sidebar-wrapper .sidebar-inner {
-    position: relative;
-    padding: 1rem; }
+  background: #333;
+  padding: 1rem; }
   .sidebar-wrapper:hover {
     box-shadow: -1px 0 5px gold; }
-  .sidebar-wrapper LABEL {
+  .sidebar-wrapper .sidebar-toggle-label {
     padding: 1rem;
     background: gold;
     color: #333;
-    transform: translateX(-100%);
+    transform: translateX(calc(-100% - 1rem));
     position: absolute;
     top: 0;
     cursor: pointer; }
@@ -318,36 +316,36 @@ HEADER {
     .sidebar-wrapper SECTION LI {
       padding: 0.5rem 0; }
 
-.archiveToggle {
+.sidebar-toggle {
   display: none; }
-  .archiveToggle:checked ~ .sidebar-wrapper {
+  .sidebar-toggle:checked ~ .sidebar-wrapper {
     right: 0;
     box-shadow: -1px 0 5px gold; }
-    .archiveToggle:checked ~ .sidebar-wrapper SECTION {
+    .sidebar-toggle:checked ~ .sidebar-wrapper SECTION {
       transform: translateX(0); }
-      .archiveToggle:checked ~ .sidebar-wrapper SECTION:nth-of-type(12) {
+      .sidebar-toggle:checked ~ .sidebar-wrapper SECTION:nth-of-type(12) {
         transition-delay: 4.8s; }
-      .archiveToggle:checked ~ .sidebar-wrapper SECTION:nth-of-type(11) {
+      .sidebar-toggle:checked ~ .sidebar-wrapper SECTION:nth-of-type(11) {
         transition-delay: 4.4s; }
-      .archiveToggle:checked ~ .sidebar-wrapper SECTION:nth-of-type(10) {
+      .sidebar-toggle:checked ~ .sidebar-wrapper SECTION:nth-of-type(10) {
         transition-delay: 4s; }
-      .archiveToggle:checked ~ .sidebar-wrapper SECTION:nth-of-type(9) {
+      .sidebar-toggle:checked ~ .sidebar-wrapper SECTION:nth-of-type(9) {
         transition-delay: 3.6s; }
-      .archiveToggle:checked ~ .sidebar-wrapper SECTION:nth-of-type(8) {
+      .sidebar-toggle:checked ~ .sidebar-wrapper SECTION:nth-of-type(8) {
         transition-delay: 3.2s; }
-      .archiveToggle:checked ~ .sidebar-wrapper SECTION:nth-of-type(7) {
+      .sidebar-toggle:checked ~ .sidebar-wrapper SECTION:nth-of-type(7) {
         transition-delay: 2.8s; }
-      .archiveToggle:checked ~ .sidebar-wrapper SECTION:nth-of-type(6) {
+      .sidebar-toggle:checked ~ .sidebar-wrapper SECTION:nth-of-type(6) {
         transition-delay: 2.4s; }
-      .archiveToggle:checked ~ .sidebar-wrapper SECTION:nth-of-type(5) {
+      .sidebar-toggle:checked ~ .sidebar-wrapper SECTION:nth-of-type(5) {
         transition-delay: 2s; }
-      .archiveToggle:checked ~ .sidebar-wrapper SECTION:nth-of-type(4) {
+      .sidebar-toggle:checked ~ .sidebar-wrapper SECTION:nth-of-type(4) {
         transition-delay: 1.6s; }
-      .archiveToggle:checked ~ .sidebar-wrapper SECTION:nth-of-type(3) {
+      .sidebar-toggle:checked ~ .sidebar-wrapper SECTION:nth-of-type(3) {
         transition-delay: 1.2s; }
-      .archiveToggle:checked ~ .sidebar-wrapper SECTION:nth-of-type(2) {
+      .sidebar-toggle:checked ~ .sidebar-wrapper SECTION:nth-of-type(2) {
         transition-delay: 0.8s; }
-      .archiveToggle:checked ~ .sidebar-wrapper SECTION:nth-of-type(1) {
+      .sidebar-toggle:checked ~ .sidebar-wrapper SECTION:nth-of-type(1) {
         transition-delay: 0.4s; }
 
 MAIN {

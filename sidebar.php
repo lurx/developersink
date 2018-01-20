@@ -1,8 +1,8 @@
-<input type="checkbox" name="archiveToggle" id="archiveToggle" class="archiveToggle" checked>
+<input type="checkbox" name="sidebar-toggle" id="sidebar-toggle" class="sidebar-toggle" checked>
 
-<aside class="sidebar-wrapper">
-    <label for="archiveToggle">Sidebar &rsaquo;</label>
-    <div class="sidebar-inner le-scroll-bar">
+<aside id="sidebar" class="sidebar-wrapper init-scrollbar">
+    <label for="sidebar-toggle" class="sidebar-toggle-label js-sidebar-toggle-label">Sidebar &rsaquo;</label>
+    <!-- <div class="sidebar-inner le-scroll-bar"> -->
     <section>
         <h4>Archives</h4>
         <ol class="list-unstyled">
@@ -117,5 +117,5 @@
         } ?></h4>
         <p><?php the_author_meta('first_name'); ?> <?php the_author_meta('last_name'); ?> , <?php the_author_meta( 'description' ); ?> </p>
     </section>
-    </div>
+    <!-- </div> -->
 </aside>

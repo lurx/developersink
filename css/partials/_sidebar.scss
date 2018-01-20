@@ -5,23 +5,23 @@
     top: 0;
     right: -15%;
     @include baseTransition;
-    position: relative;
+    position: absolute  ;
     z-index: 2;
     background: getColor("bg");
-
-    .sidebar-inner {
-        position: relative;
-        padding: $spacing;
-    }
+    padding: $spacing;
+    // .sidebar-inner {
+    //     position: relative;
+    //     padding: $spacing;
+    // }
 
     &:hover {
         box-shadow: -1px 0 5px gold;
     }
-    LABEL {
+    .sidebar-toggle-label {
         padding: $spacing;
         background: getColor("a");
         color: getColor("bg");
-        transform: translateX(-100%);
+        transform: translateX(calc(-100% - #{$spacing}));
         position: absolute;
         top: 0;
         cursor: pointer;
@@ -29,7 +29,7 @@
 
     SECTION {
         margin: 0 0 $spacing 0;
-        transform: translateX(calc(100% + 1rem));
+        transform: translateX(calc(100% + #{$spacing}));
         @include baseTransition();
         h4 {
             background: getColor("a");
@@ -48,7 +48,7 @@
 
 $max-sidebar-sections: 12;
 
-.archiveToggle {
+.sidebar-toggle {
     display: none;
     &:checked ~ .sidebar-wrapper {
         right: 0;
