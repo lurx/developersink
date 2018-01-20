@@ -76,10 +76,6 @@
 		max-width: 100%;
 		margin: $spacing/2 0 $spacing;
 	}
-	.postContent {
-		
-
-	}
 	@include respond-to(smartphone) {
 		padding: 0;
 		.postContent {
@@ -123,9 +119,6 @@
 		&:before, &:after {
 			color: getColor('fg-faded');
 		}
-	}
-	> SPAN {
-
 	}
 	.socialLinks {
 		margin: 0 $spacing/3;
