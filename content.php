@@ -1,12 +1,14 @@
-<div class="post">
-	<h2 class="postTitle">Post1 Title</h2>
-	<p class="postInfo"><a href="#" title="a class=\'test'\">Author Name</a>
+<div class="blog-post">
+	<h2 class="postTitle blog-post-title"><?php the_title(); ?></h2>
+	<p class="blog-post-meta">By <a href="#" title="a class=\'test'\"><?php the_author(); ?></a>
 		<span class="socialLinks">
 			social="<a href="javascript:void(0);" class="socialLink twitter"><i class="fa fa-twitter"></i></a><a href="javascript:void(0);" class="socialLink facebook"><i class="fa fa-facebook-official"></i></a>"
 		</span>
-		date="<span class="postDate">July 6, 2017</span>"</p>
+		date="<span class="postDate"><?php the_date(); ?></span>"</p>
 	<img src="https://lorempixel.com/1800/600/technics/" alt="" class="headerImg" />
-	<div class="postContent">
+    <?php the_content(); ?>
+</div>
+	<!--div class="postContent">
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. In volutpat, ante eu malesuada accumsan, quam felis aliquet nisi, et maximus ante est in neque. Cras sit amet nisi lobortis, vestibulum nibh nec, condimentum ipsum. In sit amet ante elit. Nunc tempor nec orci condimentum volutpat. Etiam eu est dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In porta purus sit amet lorem mollis, ut malesuada lorem euismod. Maecenas turpis dui, molestie tristique malesuada non, sollicitudin eu erat. Donec eros nibh, interdum et arcu vel, egestas volutpat dui. Praesent libero est, pulvinar ac sodales a, rutrum rutrum mauris. Donec aliquam ipsum nisl, ut volutpat est ullamcorper ac. Cras posuere nulla et lectus ultricies consectetur. Integer convallis tortor at ex pulvinar placerat.
 		</p>
@@ -48,4 +50,4 @@
 		<li><a href="#"><img src="https://lorempixel.com/200/100/" alt="" /><p class="title">Related Title</p></a></li>
 		<li><a href="#"><img src="https://lorempixel.com/200/100/" alt="" /><p class="title">Related Title</p></a></li>
 	</ul>
-</div>
+</div-->

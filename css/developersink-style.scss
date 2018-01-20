@@ -6,10 +6,12 @@
 @import 'modules/_externals'; 	    // Reset, Fonts, Etc.
 
 @import 'partials/_general'; 		// General CSS
+@import 'partials/_fonts';          // Fonts
 @import 'partials/_header'; 	    // Header & NAV
+@import 'partials/_sidebar';        // Sidebar
 @import 'partials/_main';  	    	// Main content area
 @import 'partials/_post';    		// Post styles
-@import 'partials/_postarchive';		// Post archive/gallery
+@import 'partials/_postarchive';	// Post archive/gallery
 @import 'partials/_footer'; 		// Footer
 @import 'partials/_animations';		// Animations
 

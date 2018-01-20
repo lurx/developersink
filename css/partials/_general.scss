@@ -23,24 +23,6 @@ A {
 	}
 }
 
-H1 {
-	font-size: 3vw;
-	& + .subtitle {
-		font-size: 1.25vw;
-		white-space: nowrap;
-		@include respond-to(smartphone) {
-		    margin-top: -5vw;
-		}
-	}
-	@include respond-to(smartphone) {
-		font-size: 12vw;
-		line-height: 12vw;
-	}
-}
-H2 {
-	font-size: 2rem;
-}
-
 .wrapper {
 	display: flex;
 	flex-direction: row;
@@ -51,3 +33,11 @@ H2 {
 		height: auto;
 	}
 }
+
+
+HTML .mCS-minimal.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar { 
+	background-color: getColor('a');
+	&.mCSB_scrollTools_onDrag {
+		background-color: purple;
+	}
+ }

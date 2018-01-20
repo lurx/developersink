@@ -1,1 +1,4 @@
-var ps = new PerfectScrollbar('.content');
+$('.le-scroll-bar').mCustomScrollbar({
+    theme: "minimal"
+});
+
