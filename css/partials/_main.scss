@@ -1,0 +1,57 @@
+MAIN {
+	width: 90%;
+	order: 2;
+	position: relative;
+	padding: 0;
+	display: flex;
+	.bracket {
+		padding: 0 $spacing/2;
+		height: 100%;
+		font-size: 90vh;
+		opacity: 0.25;
+		z-index: -1;
+		@include baseTransition;
+	}
+	.inner {
+		width: 100%;
+		@include baseTransition($transition-time*5);
+		&.collapsed {
+			width: 0;
+			.content {
+				padding-left: 0;
+				padding-right: 0;
+			}
+			.post {
+				padding: $spacing 0;
+				overflow: hidden;
+			}
+		}
+	}
+	.content {
+		padding: $spacing * 2;
+		max-height: 100%;
+		overflow-y: auto;
+		transition: $transition-time opacity;
+		&.faded {
+			opacity: 0;
+			transition-delay: $transition-time;
+		}
+	}
+	@include respond-to(smartphone) {
+		width: 100vw;
+		.bracket {
+			display: none;
+		}
+		.content {
+			padding: $spacing*3;
+		}
+	}
+	@include respond-to(iPadPortrait) {
+		.bracket {
+			width: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+	};
+}
+

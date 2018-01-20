@@ -1,0 +1,36 @@
+FOOTER {
+	padding: $spacing;
+	background: green;
+	width: 100%;
+	min-height: 2.5rem;
+	position: fixed;
+	bottom: -3rem;
+	box-sizing: border-box;
+	border-top: 0.5vh solid getColor('a');
+	@include baseTransition;
+	&:before {
+		content: 'Up!';
+		//width: 2.5vw;
+		height: 50%;
+		background: getColor('a');
+		color: getColor('bg');
+		position: absolute;
+		top: -60%;
+		left: $spacing*2;
+		@include baseTransition;
+		transition-delay: $transition-delay;
+		overflow: hidden;
+
+		padding: $spacing/4 $spacing/2;
+	}
+	&:hover {
+		bottom: 0vh;
+		&:before {
+			//height: 0;
+			left: -100%;
+		}
+	}
+	@include respond-to(smartphone) {
+		position: static;
+	};
+}

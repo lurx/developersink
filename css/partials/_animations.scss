@@ -1,0 +1,68 @@
+@keyframes pulse-box {
+	0% {
+		color: rgba(getColor('a'), 1);
+		box-shadow: 0 0 0 0 currentcolor;
+	}
+	70% {
+		color: rgba(getColor('a'), 0);
+		box-shadow: 0 0 0 $spacing/3 currentcolor;
+	}
+	100% {
+		color: rgba(getColor('a'), 0);
+		box-shadow: 0 0 0 0 currentcolor;
+	}
+}
+
+@keyframes pulse-text {
+	0% {
+		text-shadow: 0 0 0 rgba(getColor('a'), 1);
+	}
+	70% {
+		text-shadow: 0 0 $spacing*2 rgba(getColor('a'), 0);
+	}
+	100% {
+		text-shadow: 0 0 0 rgba(getColor('a'), 0);
+	}
+}
+
+@keyframes heartbeat {
+	0% {
+		transform: scale( .75 );
+	}
+	20%	{
+		transform: scale( 1 );
+	}
+	40%	{
+		transform: scale( .75 );
+	}
+	60%	{
+		transform: scale( 1 );
+	}
+	80% {
+		transform: scale( .75 );
+	}
+	100% {
+		transform: scale( .75 );
+	}
+}
+
+@keyframes wiggle {
+    0% {
+        transform: scaleX(1)
+    }
+
+    5%,10% {
+        transform: scale3d(.9,.9,.9) rotate(-3deg)
+    }
+
+    15%,25%,35%,45% {
+        transform: scale3d(1.1,1.1,1.1) rotate(3deg)
+    }
+
+    20%,30%,40% {
+        transform: scale3d(1.1,1.1,1.1) rotate(-3deg)
+    }
+	46% , to {
+        transform: scaleX(1)
+    }
+}

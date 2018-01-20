@@ -1,0 +1,170 @@
+.post {
+	padding: $spacing;
+	transition: 0.3s padding $transition-delay;
+	.postTitle, .postInfo {
+		&:before, &:after {
+			margin: 0 $spacing/10;
+			color: getColor('fg-faded');
+		}
+		&:before {
+			content: '<';
+		}
+		&:after {
+			content: '/>';
+		}
+	}
+	.postInfo {
+		margin: $spacing/2 0;
+		vertical-align: middle;
+		//line-height: 2rem;
+		color: getColor('fg-faded');
+
+		& > A, & > SPAN {
+			&:before, &:after {
+				color: getColor('fg-faded');
+			}
+		}
+		> SPAN {
+
+		}
+		.socialLinks {
+			margin: 0 $spacing/3;
+		}
+		.socialLink {
+			margin-left: $spacing/4;
+			I { @include baseTransition; }
+			&:hover {
+				text-decoration: underline;
+				I { color: getColor('a'); } 
+			}
+			&.twitter {
+				color: getColor('twitter');
+			}
+			&.facebook {
+				color: getColor('facebook');
+				position: relative;
+				&:after {
+					content: '';
+					width: 95%;
+					height: 70%;
+					position: absolute;
+					background: #fff;
+					top: 15%;
+					left: 5%;
+					z-index: -1;
+					@include baseTransition;
+				}
+				&:hover {
+					&:after {
+						background: getColor('bg');
+					}
+				}
+			}
+			&:first-child {
+				margin: 0;
+			}
+		}
+		.postDate {
+			color: #fff;
+		}
+	}
+	.headerImg {
+		max-width: 100%;
+		margin: $spacing/2 0 $spacing;
+	}
+	.postContent {
+		font-size: 1.25rem;
+		font-weight: 100;
+		P {
+			line-height: 1.5;
+			margin: $spacing 0;
+			text-align: justify;
+		}
+		.code {
+			font-family: 'Source Code Pro', serif;
+		}
+		UL, OL, BLOCKQUOTE {
+			line-height: 1.5;
+		}
+		UL, OL {
+			padding: $spacing*1.5 $spacing*2;
+			margin: $spacing*1.5;
+			line-height: 1.5;
+		}
+		UL {
+			list-style-type: decimal;
+		}
+		blockquote {
+			font-style: italic;
+			position: relative;
+			background: rgba(getColor('fg'), 0.1);
+			padding: $spacing*1.5 $spacing*2;
+			margin: $spacing*1.5 $spacing*1.5 $spacing/2;
+			&:before {
+				content: '“';
+				top: -1.5rem;
+				left: -1.5rem;
+
+			}
+			&:after {
+				content: '„';
+				bottom: -1rem;
+				right: -1.5rem;
+			}
+			&:before, &:after {
+				font-family: Times New Roman, serif;
+				font-size: 5rem;
+				position: absolute;
+			}
+		}
+		.quoteSource {
+			text-align: right;
+			display: block;
+			padding: 0 $spacing*1.5;
+			margin-bottom: $spacing*1.5;
+			font-size: 1rem;
+			&:before {
+				content: 'Source: ';
+				color: rgba(getColor('fg'), 0.5);
+			}
+		}
+		.cp_embed_wrapper {
+			padding: $spacing*1.5;
+		}
+
+	}
+	@include respond-to(smartphone) {
+		padding: 0;
+		.postContent {
+			font-size: 1rem;
+			BLOCKQUOTE {
+				margin: 0;
+			}
+			.quoteSource {
+				padding: $spacing/2 0;
+				font-size: 0.8rem;
+			}
+			UL {
+				padding: 0;
+			}
+			.cp_embed_wrapper {
+				padding: 0;
+			}
+		}
+	}
+}
+
+.relatedPosts {
+	h2 {
+		margin: $spacing 0;
+		border-top: 1px solתid getColor('fg');
+		padding-top: $spacing;
+	}
+	UL {
+		display: flex;
+		justify-content: space-between;
+		IMG {
+			margin-bottom: $spacing/2;
+		}
+	}
+}

@@ -1,0 +1,53 @@
+* {
+	box-sizing: border-box;
+	&::selection {
+		color: getColor('bg');
+		background: getColor('a');
+	}
+}
+
+BODY {
+	font-family: 'Zilla Slab', serif;
+	background: getColor('bg');
+	color: getColor('fg');
+	height: 100vh;
+	overflow: hidden;
+}
+
+A {
+	color: getColor('fg');
+	text-decoration: none;
+	@include baseTransition;
+	&:hover {
+		color: getColor('a');
+	}
+}
+
+H1 {
+	font-size: 3vw;
+	& + .subtitle {
+		font-size: 1.25vw;
+		white-space: nowrap;
+		@include respond-to(smartphone) {
+		    margin-top: -5vw;
+		}
+	}
+	@include respond-to(smartphone) {
+		font-size: 12vw;
+		line-height: 12vw;
+	}
+}
+H2 {
+	font-size: 2rem;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+	
+	@include respond-to(smartphone) {
+		flex-direction: column;
+		height: auto;
+	}
+}
