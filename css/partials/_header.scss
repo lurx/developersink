@@ -1,318 +1,332 @@
 HEADER {
-	height: 100%;
-	width: 15%;
-	order: 1;
-	padding: 0;
-	position: relative;
-	@include baseTransition;
-	@include respond-to(smartphone) {
-		width: 100%;
-		height: auto;
-		position: absolute;
-		background: getColor('bg');
-		z-index: 1;
-		left: -100%;
-	}
-	.innerWrapper {
-		color: getColor('fg');
-		padding: $spacing/2;
-		transform-origin: top right;
-		position: absolute;
-		right: 40%;
-		text-align: right;
-		//width: 140%;
-		@include baseTransition;
-		display: grid;
-		//grid-template-columns: 27% 75%;
-		grid-template-rows: auto;
-		grid-template-areas: 
-			"title    logo"
-			"subtitle logo";
-		transform: rotate(-90deg) scale(1.25);
-		cursor: pointer;
-		@include respond-to(smartphone) {
-			transform: rotate(0deg) scale(1);
-			right: auto;
-			left: 0;
-		};
-	}
-	h1 {
-		grid-area: title;
-	}
-	.subtitle {
-		grid-area: subtitle;
-		@include respond-to(smartphone) {
-			font-size: 5vw;
-			text-align: center;
-		};
-	}
-	.logo {
-		grid-area: logo;
-		margin-left: $spacing/2;
-		width: 5vw;
-		cursor: pointer;
-		animation: 2s wiggle infinite;
-		animation-fill-mode: both;
-		IMG {
-			@include baseTransition;
-			max-height: 5vw;
-			transform: rotate(90deg);
-			@include respond-to(smartphone) {
-				transform: rotate(0deg);
-				max-height: 25vw;
-			};
-		}
-		@include respond-to(smartphone) {
-			width: auto;
-			margin: 0;
-			position: absolute;
-			right: -35vw;
-		};
-	}
-	NAV {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		width: 100%;
-		overflow: hidden;
-		box-sizing: border-box;
-		LI SPAN, LI A {
-			display: block;
-			width: 100%;
-			padding: $spacing;
-			position: relative;
-			color: getColor('fg');
-			cursor: pointer;
-			&:before {
-				content: '';
-				width: 100%;
-				max-width: 0;
-				height: 100%;
-				position: absolute;
-				background: getColor('tr');
-				top: 0;
-				left: 0;
-				z-index: -1;
-				@include baseTransition;
-			}
-		}
-		LI:hover {
-			& > SPAN, & > A {
-				&:before {
-					max-width: 100%;
-					background: linear-gradient(to right, getColor('a'), getColor('tr') 80%);
-				}
-			}
-			.subnav {
-				max-height: 100vh;
-			}
-		}
-		& > UL {
-			& > LI {
-				@include baseTransition;
-				width: 0.5%;
-				background: getColor('a');
-				color: getColor('bg');
-				position: relative;
+    height: 100%;
+    width: 15%;
+    order: 1;
+    padding: 0;
+    position: relative;
+    @include baseTransition;
+    @include respond-to(smartphone) {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        background: getColor("bg");
+        z-index: 1;
+        left: -100%;
+    }
+    .innerWrapper {
+        color: getColor("fg");
+        padding: $spacing/2;
+        transform-origin: top right;
+        position: absolute;
+        right: 40%;
+        text-align: right;
+        @include baseTransition;
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "title    logo"
+            "subtitle logo";
+        transform: rotate(-90deg) scale(1.25);
+        cursor: pointer;
+        @include respond-to(smartphone) {
+            transform: rotate(0deg) scale(1);
+            right: auto;
+            left: 0;
+        }
+    }
+    h1 {
+        grid-area: title;
+    }
+    .subtitle {
+        grid-area: subtitle;
+        @include respond-to(smartphone) {
+            font-size: 5vw;
+            text-align: center;
+        }
+    }
+    .logo {
+        grid-area: logo;
+        margin-left: $spacing/2;
+        width: 5vw;
+        cursor: pointer;
+        animation: 2s wiggle infinite;
+        animation-fill-mode: both;
+        IMG {
+            @include baseTransition;
+            max-height: 5vw;
+            transform: rotate(90deg);
+            @include respond-to(smartphone) {
+                transform: rotate(0deg);
+                max-height: 25vw;
+            }
+        }
+        @include respond-to(smartphone) {
+            width: auto;
+            margin: 0;
+            position: absolute;
+            right: -35vw;
+        }
+    }
+    NAV {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
+        LI SPAN,
+        LI A {
+            display: block;
+            width: 100%;
+            padding: $spacing;
+            position: relative;
+            color: getColor("fg");
+            cursor: pointer;
+            &:before {
+                content: "";
+                width: 100%;
+                max-width: 0;
+                height: 100%;
+                position: absolute;
+                background: getColor("tr");
+                top: 0;
+                left: 0;
+                z-index: -1;
+                @include baseTransition;
+            }
+        }
+        LI:hover {
+            & > SPAN,
+            & > A {
+                &:before {
+                    max-width: 100%;
+                    background: linear-gradient(
+                        to right,
+                        getColor("a"),
+                        getColor("tr") 80%
+                    );
+                }
+            }
+            .subnav {
+                max-height: 100vh;
+            }
+        }
+        & > UL {
+			
+            & > LI {
+                @include baseTransition;
+                width: 0.5%;
+                background: getColor("a");
+                color: getColor("bg");
+                position: relative;
+				overflow: hidden;
 				@for $i from 1 through $nav-items {
-					&:nth-child(#{$i}) {
-						transition-delay: (($nav-items - 1) * $transition-time)-(($i - 1) * $transition-time);
-					}
-				}
-			}
+                    &:nth-child(#{$i}) {
+                        transition-delay: (($nav-items - 1) * $transition-time)-(
+                                ($i - 1) * $transition-time
+                            );
+                    }
+                }
+            }
+        }
 
-		}
+        .subnav {
+            max-height: 0;
+            overflow: hidden;
+            margin-left: $spacing;
+            color: getColor("a");
+            left: 10%;
+            width: 80%;
+            z-index: 9;
+            top: 85%;
+            box-shadow: 1px 0 5vh getColor("blk");
+            @include baseTransition();
+            transition-delay: $transition-delay/2;
+            LI {
+                color: getColor("fg");
+                border-left: 2px solid getColor("a");
+                SPAN,
+                A {
+                    display: block;
+                }
+                &:first-child:before,
+                &:last-child:after {
+                    content: "";
+                    height: 2px;
+                    background: linear-gradient(
+                        to right,
+                        getColor("a"),
+                        getColor("tr") 80%
+                    );
+                    width: 100%;
+                    display: block;
+                }
+            }
+        }
+    }
 
-		.subnav {
-			max-height: 0;
-			overflow: hidden;
-			margin-left: $spacing;
-			color: getColor('a');
-			left: 10%;
-			width: 80%;
-			z-index: 9;
-			top: 85%;
-			//box-shadow: 1px 0 5px getColor('blk');
-			box-shadow: 1px 0 5vh getColor('blk');
-			@include baseTransition();
-			transition-delay: $transition-delay/2;
-			LI {
-				color: getColor('fg');
-				border-left: 2px solid getColor('a');
-				SPAN, A {
-					display: block;
-				}
-				&:last-child {
-					&:after {
-						content: '';
-						height: 2px;
-						background: linear-gradient(to right, getColor('a'), getColor('tr') 80%);
-						width: 100%;
-						display: block;
-					}
-				}
-			}
-		}
+    .search {
+        white-space: nowrap;
+        border: 0px solid getColor("a");
+        background: getColor("a");
+        @include baseTransition;
 
-	}
+        display: flex;
+        justify-content: space-around;
+        I {
+            color: getColor("a");
+            padding: 0;
+            vertical-align: middle;
+            max-width: 20%;
+            line-height: 3rem;
+            @include respond-to(smartphone) {
+                line-height: 2rem;
+            }
+            &:before {
+                line-height: 2rem;
+            }
+        }
+        INPUT {
+            border: none;
+            outline: none;
+            background: transparent;
+            color: getColor("bg");
+            padding: $spacing;
+            max-width: 80%;
+            caret-color: getColor("a");
+        }
+        @include respond-to(smartphone) {
+            background: getColor("tr");
+            border-top: 1px solid getColor("a");
+            height: 2rem;
 
-	.search {
-		white-space: nowrap;
-		border: 0px solid getColor('a');
-		background: getColor('a');
-		@include baseTransition;
+            I {
+                padding: 0;
+            }
+        }
+    }
+    @include respond-to(smartphone) {
+        //smartphones
+        width: 100%;
+        height: auto;
 
-		display: flex;
-		justify-content: space-around;
-		I {
-			color: getColor('a');
-			padding: 0;
-			vertical-align: middle;
-			max-width: 20%;
-			line-height: 3rem;
-			@include respond-to(smartphone) {
-				line-height: 2rem;
-			}
-			&:before {
-				line-height: 2rem;
-			}
-		}
-		INPUT {
-			border: none;
-			outline: none;
-			background: transparent;
-			color: getColor('bg');
-			padding: $spacing;
-			max-width: 80%;
-			caret-color: getColor('a');
-		}
-		@include respond-to(smartphone) {
-			background: getColor('tr');
-			border-top: 1px solid getColor('a');
-			height: 2rem;
-
-			I {
-				padding: 0;
-
-			}
-
-		}
-	}
-	@include respond-to(smartphone) {  //smartphones
-		width: 100%;
-		height: auto;
-
-
-		&.open {
-			left: -100%;
-		}
-		&:hover {
-			width: 100%;
-		}
-		.innerWrapper {
-			grid-template-columns: auto;
-			transform-origin: 0 0;
-			width: 100%;
-			position: static;
-			transform: scale(0.95);
-		}
-		NAV {
-			position: static;
-			overflow: visible;
-			transform: none;
-			& > UL {
-				border-bottom: 0.1vh solid getColor('a');
-				LI {
-					background: transparent;
-					width: 100%;
-					text-align: center;
-					SPAN {
-						color: getColor('fg');
-						padding: $spacing/2;
-						&:active {
-							&:before {
-								max-width: 100%;
-								background: linear-gradient(to right, gold, transparent 550%);
-							}
-						}
-					}
-					&.active A {
-						color: getColor('bg');
-						&:before {
-							max-width: 100%;
-							background: getColor('a');
-						}
-					}
-				}
-			}
-		}
-		&:hover {
-			.innerWrapper {
-				transform: scale(0.95);
-				width: 100%;
-			}
-			NAV {
-				max-height: 100vh;
-			}
-		}
-	}
+        &.open {
+            left: -100%;
+        }
+        &:hover {
+            width: 100%;
+        }
+        .innerWrapper {
+            grid-template-columns: auto;
+            transform-origin: 0 0;
+            width: 100%;
+            position: static;
+            transform: scale(0.95);
+        }
+        NAV {
+            position: static;
+            overflow: visible;
+            transform: none;
+            & > UL {
+                border-bottom: 0.1vh solid getColor("a");
+                LI {
+                    background: transparent;
+                    width: 100%;
+                    text-align: center;
+                    SPAN {
+                        color: getColor("fg");
+                        padding: $spacing/2;
+                        &:active {
+                            &:before {
+                                max-width: 100%;
+                                background: linear-gradient(
+                                    to right,
+                                    gold,
+                                    transparent 550%
+                                );
+                            }
+                        }
+                    }
+                    &.active A {
+                        color: getColor("bg");
+                        &:before {
+                            max-width: 100%;
+                            background: getColor("a");
+                        }
+                    }
+                }
+            }
+        }
+        &:hover {
+            .innerWrapper {
+                transform: scale(0.95);
+                width: 100%;
+            }
+            NAV {
+                max-height: 50vh;
+            }
+        }
+    }
 }
 
 .navToggle {
-	display: none;
+    display: none;
 
-	&:checked {
-		& ~ HEADER {
-			.innerWrapper {
-				transform: rotate(0deg) scale(1);
-				padding: $spacing/4;
-				right: 0;
-				@include respond-to(desktop) {
-					transform: rotate(0deg) scale(0.6);
-				}
-				IMG {
-					transform: rotate(0deg);
-				}
-				.logo {
-					position: static;
-					animation: none;
-				}
-			}
-			
-			NAV {
-				& > UL > LI {
-					width: 100%;
-					background: linear-gradient(to right, getColor('tr') 0%, getColor('tr') 65%);
-					@for $i from $nav-items through 1 {
-						&:nth-child(#{$i}) {
-							transition-delay: $transition-time * $i;
-						}
-					}
-				}
-			}
-			.search {
-				border: 1px solid getColor('a');
-				INPUT {
-					border: none;
-					&:focus {
-						color: getColor('a');	
-					}
-				}
+    &:checked {
+        & ~ HEADER {
+            .innerWrapper {
+                transform: rotate(0deg) scale(1);
+                padding: $spacing/4;
+                right: 0;
+                @include respond-to(desktop) {
+                    transform: rotate(0deg) scale(0.6);
+                }
+                IMG {
+                    transform: rotate(0deg);
+                }
+                .logo {
+                    position: static;
+                    animation: none;
+                }
+            }
 
-			}
-			.social {
-				bottom: 85%;
-				transform: rotate(0deg);
-			}
-			@include respond-to(smartphone) {
-				width: 100%;
-				height: auto;
-				background: getColor('bg');
-				position: absolute;
-				z-index: 1;
-				left: 0;
-				transform: rotate(0deg) scale(1);
-			}
-		}
-	}
+            NAV {
+                & > UL > LI {
+                    width: 100%;
+                    background: linear-gradient(
+                        to right,
+                        getColor("tr") 0%,
+                        getColor("tr") 65%
+                    );
+                    @for $i from $nav-items through 1 {
+                        &:nth-child(#{$i}) {
+                            transition-delay: $transition-time * $i;
+                        }
+                    }
+                }
+            }
+            .search {
+                border: 1px solid getColor("a");
+                INPUT {
+                    border: none;
+                    &:focus {
+                        color: getColor("a");
+                    }
+                }
+            }
+            .social {
+                bottom: 85%;
+                transform: rotate(0deg);
+            }
+            @include respond-to(smartphone) {
+                width: 100%;
+                height: auto;
+                background: getColor("bg");
+                position: absolute;
+                z-index: 1;
+                left: 0;
+                transform: rotate(0deg) scale(1);
+            }
+        }
+    }
 }

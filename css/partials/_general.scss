@@ -35,9 +35,5 @@ A {
 }
 
 
-HTML .mCS-minimal.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar { 
-	background-color: getColor('a');
-	&.mCSB_scrollTools_onDrag {
-		background-color: purple;
-	}
- }
+HTML .mCS-my-theme.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ background-color: red; }
+HTML .mCS-my-theme.mCSB_scrollTools .mCSB_draggerRail{ background-color: white; } 

@@ -10,7 +10,6 @@ FOOTER {
 	@include baseTransition;
 	&:before {
 		content: 'Up!';
-		//width: 2.5vw;
 		height: 50%;
 		background: getColor('a');
 		color: getColor('bg');
@@ -26,7 +25,6 @@ FOOTER {
 	&:hover {
 		bottom: 0vh;
 		&:before {
-			//height: 0;
 			left: -100%;
 		}
 	}

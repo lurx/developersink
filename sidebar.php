@@ -1,4 +1,4 @@
-<input type="checkbox" name="sidebar-toggle" id="sidebar-toggle" class="sidebar-toggle" checked>
+<input type="checkbox" name="sidebar-toggle" id="sidebar-toggle" class="sidebar-toggle">
 
 <aside id="sidebar" class="sidebar-wrapper init-scrollbar">
     <label for="sidebar-toggle" class="sidebar-toggle-label js-sidebar-toggle-label">Sidebar &rsaquo;</label>
