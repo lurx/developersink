@@ -8,7 +8,7 @@
     <nav id="nav">
         <ul>
             <li class="active"><span>Blog</span></li>
-            <li><span>About</span></li>
+            <li><span>About <?php echo get_bloginfo( 'name' ); ?></span></li>
             <li>
                 <span>References</span>
                 <ul class="subnav">
