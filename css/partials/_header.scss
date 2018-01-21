@@ -112,7 +112,6 @@ HEADER {
             }
         }
         & > UL {
-			
             & > LI {
                 @include baseTransition;
                 width: 0.5%;
@@ -139,7 +138,9 @@ HEADER {
             width: 80%;
             z-index: 9;
             top: 85%;
-            box-shadow: 1px 0 5vh getColor("blk");
+			box-shadow: 1px 0 5vh getColor("blk");
+			position: absolute;
+			background: getColor('bg');
             @include baseTransition();
             transition-delay: $transition-delay/2;
             LI {
@@ -297,7 +298,10 @@ HEADER {
                         to right,
                         getColor("tr") 0%,
                         getColor("tr") 65%
-                    );
+					);
+					&:hover {
+						overflow: visible;
+					}
                     @for $i from $nav-items through 1 {
                         &:nth-child(#{$i}) {
                             transition-delay: $transition-time * $i;
