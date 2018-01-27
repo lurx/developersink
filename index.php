@@ -32,9 +32,9 @@
 		<?php wp_head();?>
 	</head>
 	<body>
+		<?php include_once "developersink-svg.php"; ?>
 		<div class="wrapper">
-					<?php get_header();?>
-
+			<?php get_header();?>
 			<main>
 				<div class="bracket">{</div>
 				<div class="inner">

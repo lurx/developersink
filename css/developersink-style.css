@@ -13,6 +13,8 @@ BODY {
   color: #fff;
   height: 100vh;
   overflow: hidden; }
+  BODY > SVG:first-child {
+    display: none; }
 
 A {
   color: #fff;
@@ -100,12 +102,14 @@ HEADER {
     cursor: pointer;
     animation: 2s wiggle infinite;
     animation-fill-mode: both; }
-    HEADER .logo IMG {
+    HEADER .logo SVG {
       transition: 0.4s all;
       max-height: 5vw;
-      transform: rotate(90deg); }
+      max-width: 5vw;
+      transform: rotate(90deg);
+      fill: #fff; }
       @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-        HEADER .logo IMG {
+        HEADER .logo SVG {
           transform: rotate(0deg);
           max-height: 25vw; } }
     @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
@@ -282,7 +286,7 @@ HEADER {
     @media only screen and (min-width: 1224px) {
       .navToggle:checked ~ HEADER .innerWrapper {
         transform: rotate(0deg) scale(0.6); } }
-    .navToggle:checked ~ HEADER .innerWrapper IMG {
+    .navToggle:checked ~ HEADER .innerWrapper SVG {
       transform: rotate(0deg); }
     .navToggle:checked ~ HEADER .innerWrapper .logo {
       position: static;

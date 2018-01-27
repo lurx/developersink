@@ -12,6 +12,9 @@ BODY {
 	color: getColor('fg');
 	height: 100vh;
 	overflow: hidden;
+	& > SVG:first-child {
+		display: none;
+	}
 }
 
 A {

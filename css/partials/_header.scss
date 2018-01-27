@@ -51,10 +51,12 @@ HEADER {
         cursor: pointer;
         animation: 2s wiggle infinite;
         animation-fill-mode: both;
-        IMG {
+        SVG {
             @include baseTransition;
-            max-height: 5vw;
-            transform: rotate(90deg);
+			max-height: 5vw;
+			max-width: 5vw;
+			transform: rotate(90deg);
+			fill: getColor('fg');
             @include respond-to(smartphone) {
                 transform: rotate(0deg);
                 max-height: 25vw;
@@ -282,7 +284,7 @@ HEADER {
                 @include respond-to(desktop) {
                     transform: rotate(0deg) scale(0.6);
                 }
-                IMG {
+                SVG {
                     transform: rotate(0deg);
                 }
                 .logo {
