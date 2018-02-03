@@ -13,6 +13,9 @@ BODY {
   color: #fff;
   height: 100vh;
   overflow: hidden; }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    BODY {
+      overflow: scroll; } }
   BODY > SVG:first-child {
     display: none; }
 
@@ -38,14 +41,15 @@ HTML .mCS-my-theme.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
 HTML .mCS-my-theme.mCSB_scrollTools .mCSB_draggerRail {
   background-color: white; }
 
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  BODY {
+    font-size: 2vh; } }
+
 H1 {
   font-size: 3vw; }
   H1 + .subtitle {
     font-size: 1.25vw;
     white-space: nowrap; }
-    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-      H1 + .subtitle {
-        margin-top: -5vw; } }
   @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     H1 {
       font-size: 12vw;
@@ -65,10 +69,8 @@ HEADER {
     HEADER {
       width: 100%;
       height: auto;
-      position: absolute;
       background: #333;
-      z-index: 1;
-      left: -100%; } }
+      z-index: 1; } }
   HEADER .innerWrapper {
     color: #fff;
     padding: 0.5rem;
@@ -84,9 +86,7 @@ HEADER {
     cursor: pointer; }
     @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
       HEADER .innerWrapper {
-        transform: rotate(0deg) scale(1);
-        right: auto;
-        left: 0; } }
+        transform: rotate(0deg) scale(1); } }
   HEADER h1 {
     grid-area: title; }
   HEADER .subtitle {
@@ -108,14 +108,12 @@ HEADER {
       fill: #fff; }
       @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
         HEADER .logo > SVG {
-          transform: rotate(0deg);
-          max-height: 25vw; } }
+          transform: rotate(0deg) scale(3);
+          max-height: 5vw;
+          transform-origin: top right; } }
     @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
       HEADER .logo {
-        width: auto;
-        margin: 0;
-        position: absolute;
-        right: -35vw; } }
+        width: 15vw; } }
   HEADER NAV {
     position: absolute;
     top: 50%;
@@ -208,16 +206,18 @@ HEADER {
     transition: 0.4s all;
     display: flex;
     justify-content: space-around; }
-    HEADER .search I {
+    HEADER .search SVG {
       color: gold;
       padding: 0;
       vertical-align: middle;
       max-width: 20%;
       line-height: 3rem; }
       @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-        HEADER .search I {
-          line-height: 2rem; } }
-      HEADER .search I:before {
+        HEADER .search SVG {
+          line-height: 2rem;
+          margin: 1rem;
+          text-align: center; } }
+      HEADER .search SVG:before {
         line-height: 2rem; }
     HEADER .search INPUT {
       border: none;
@@ -227,13 +227,17 @@ HEADER {
       padding: 1rem;
       max-width: 80%;
       caret-color: gold; }
+      @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+        HEADER .search INPUT {
+          font-size: 2vh;
+          max-width: 100%;
+          width: 100%;
+          text-align: center; }
+          HEADER .search INPUT:focus {
+            border: 1px solid gold; } }
     @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
       HEADER .search {
-        background: transparent;
-        border-top: 1px solid gold;
-        height: 2rem; }
-        HEADER .search I {
-          padding: 0; } }
+        background: transparent; } }
   @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     HEADER {
       width: 100%;
@@ -246,18 +250,20 @@ HEADER {
         grid-template-columns: auto;
         transform-origin: 0 0;
         width: 100%;
-        position: static;
-        transform: scale(0.95); }
+        position: static; }
       HEADER NAV {
         position: static;
-        overflow: visible;
-        transform: none; }
+        overflow: hidden;
+        transform: none;
+        max-height: 0;
+        transition: 0.4s all; }
         HEADER NAV > UL {
           border-bottom: 0.1vh solid gold; }
           HEADER NAV > UL LI {
             background: transparent;
             width: 100%;
-            text-align: center; }
+            text-align: center;
+            line-height: 2; }
             HEADER NAV > UL LI SPAN {
               color: #fff;
               padding: 0.5rem; }
@@ -268,17 +274,11 @@ HEADER {
               color: #333; }
               HEADER NAV > UL LI.active A:before {
                 max-width: 100%;
-                background: gold; }
-      HEADER:hover .innerWrapper {
-        transform: scale(0.95);
-        width: 100%; }
-      HEADER:hover NAV {
-        max-height: 50vh; } }
+                background: gold; } }
 
 .navToggle {
   display: none; }
   .navToggle:checked ~ HEADER .innerWrapper {
-    transform: rotate(0deg) scale(1);
     padding: 0.25rem;
     right: 0; }
     @media only screen and (min-width: 1224px) {
@@ -286,6 +286,9 @@ HEADER {
         transform: rotate(0deg) scale(0.6); } }
     .navToggle:checked ~ HEADER .innerWrapper SVG {
       transform: rotate(0deg); }
+      @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+        .navToggle:checked ~ HEADER .innerWrapper SVG {
+          transform: rotate(0deg) scale(3); } }
     .navToggle:checked ~ HEADER .innerWrapper .logo {
       position: static;
       animation: none; }
@@ -314,6 +317,9 @@ HEADER {
       transition-delay: 0.8s; }
     .navToggle:checked ~ HEADER NAV > UL > LI:nth-child(1) {
       transition-delay: 0.4s; }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .navToggle:checked ~ HEADER NAV {
+      max-height: 50vh; } }
   .navToggle:checked ~ HEADER .search {
     border: 1px solid gold; }
     .navToggle:checked ~ HEADER .search INPUT {
@@ -344,6 +350,21 @@ HEADER {
   z-index: 2;
   background: #333;
   padding: 1rem; }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .sidebar-wrapper {
+      position: fixed;
+      width: 50vw;
+      right: -50vw; } }
+  @media only screen and (min-width: 321px) {
+    .sidebar-wrapper {
+      position: fixed;
+      width: 50vw;
+      right: -50vw; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .sidebar-wrapper {
+      position: fixed;
+      width: 50vw;
+      right: -50vw; } }
   .sidebar-wrapper:hover {
     box-shadow: -1px 0 5vh #000; }
   .sidebar-wrapper .sidebar-toggle-label {
@@ -431,6 +452,9 @@ MAIN {
     max-height: 100%;
     overflow-y: auto;
     transition: 0.4s opacity; }
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+      MAIN .content {
+        max-height: none; } }
     MAIN .content.faded {
       opacity: 0;
       transition-delay: 0.4s; }
@@ -514,6 +538,9 @@ MAIN {
           padding: 0; }
         .blog-post .postContent .cp_embed_wrapper {
           padding: 0; } }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .blog-post {
+      font-size: 2.25rem; } }
 
 .blog-post-title:before, .blog-post-title:after, .blog-post-meta:before, .blog-post-meta:after {
   margin: 0 0.1rem;

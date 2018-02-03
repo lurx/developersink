@@ -12,6 +12,9 @@ BODY {
 	color: getColor('fg');
 	height: 100vh;
 	overflow: hidden;
+	@include respond-to(smartphone) {
+		overflow: scroll;
+	}
 	& > SVG:first-child {
 		display: none;
 	}

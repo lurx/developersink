@@ -9,7 +9,21 @@
     z-index: 2;
     background: getColor("bg");
     padding: $spacing;
-
+    @include respond-to(smartphone) {
+        position: fixed;
+        width: 50vw;
+        right: -50vw;
+    }
+    @include respond-to(smartphoneLandscape) {
+        position: fixed;
+        width: 50vw;
+        right: -50vw;
+    }
+    @include respond-to(iPad) {
+        position: fixed;
+        width: 50vw;
+        right: -50vw;
+    }
     &:hover {
         box-shadow: -1px 0 5vh getColor('blk');
     }

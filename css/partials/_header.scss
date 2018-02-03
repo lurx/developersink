@@ -8,10 +8,10 @@ HEADER {
     @include respond-to(smartphone) {
         width: 100%;
         height: auto;
-        position: absolute;
+        //position: absolute;
         background: getColor("bg");
         z-index: 1;
-        left: -100%;
+        //left: -100%;
     }
     .innerWrapper {
         color: getColor("fg");
@@ -30,8 +30,8 @@ HEADER {
         cursor: pointer;
         @include respond-to(smartphone) {
             transform: rotate(0deg) scale(1);
-            right: auto;
-            left: 0;
+            // right: auto;
+            // left: 0;
         }
     }
     h1 {
@@ -58,15 +58,16 @@ HEADER {
 			transform: rotate(90deg);
 			fill: getColor('fg');
 			@include respond-to(smartphone) {
-                transform: rotate(0deg);
-                max-height: 25vw;
+                transform: rotate(0deg) scale(3);
+                max-height: 5vw;
+                transform-origin: top right
             }
         }
         @include respond-to(smartphone) {
-            width: auto;
-            margin: 0;
-            position: absolute;
-            right: -35vw;
+            width: 15vw;
+            //margin: 0;
+            //position: absolute;
+            //right: -35vw;
         }
     }
     NAV {
@@ -176,7 +177,7 @@ HEADER {
 
         display: flex;
         justify-content: space-around;
-        I {
+        SVG {
             color: getColor("a");
             padding: 0;
             vertical-align: middle;
@@ -184,6 +185,8 @@ HEADER {
             line-height: 3rem;
             @include respond-to(smartphone) {
                 line-height: 2rem;
+                margin: 1rem;
+                text-align: center;
             }
             &:before {
                 line-height: 2rem;
@@ -197,15 +200,20 @@ HEADER {
             padding: $spacing;
             max-width: 80%;
             caret-color: getColor("a");
+            @include respond-to(smartphone) {
+                font-size: 2vh;
+                max-width: 100%;
+                width:100%;
+                text-align: center;
+                &:focus {
+                    border: 1px solid getColor('a');
+                }
+            }
         }
         @include respond-to(smartphone) {
             background: getColor("tr");
-            border-top: 1px solid getColor("a");
-            height: 2rem;
-
-            I {
-                padding: 0;
-            }
+            //border-top: 1px solid getColor("a");
+            //height: 2rem;
         }
     }
     @include respond-to(smartphone) {
@@ -224,18 +232,21 @@ HEADER {
             transform-origin: 0 0;
             width: 100%;
             position: static;
-            transform: scale(0.95);
+            //transform: scale(0.95);
         }
         NAV {
             position: static;
-            overflow: visible;
+            overflow: hidden;
             transform: none;
+            max-height: 0;
+            @include baseTransition();
             & > UL {
                 border-bottom: 0.1vh solid getColor("a");
                 LI {
                     background: transparent;
                     width: 100%;
                     text-align: center;
+                    line-height: 2;
                     SPAN {
                         color: getColor("fg");
                         padding: $spacing/2;
@@ -260,15 +271,12 @@ HEADER {
                 }
             }
         }
-        &:hover {
-            .innerWrapper {
-                transform: scale(0.95);
-                width: 100%;
-            }
-            NAV {
-                max-height: 50vh;
-            }
-        }
+        // &:hover {
+        //     .innerWrapper {
+        //         transform: scale(0.95);
+        //         width: 100%;
+        //     }
+        // }
     }
 }
 
@@ -278,7 +286,7 @@ HEADER {
     &:checked {
         & ~ HEADER {
             .innerWrapper {
-                transform: rotate(0deg) scale(1);
+                //transform: rotate(0deg) scale(1);
                 padding: $spacing/4;
                 right: 0;
                 @include respond-to(desktop) {
@@ -286,6 +294,9 @@ HEADER {
                 }
                 SVG {
                     transform: rotate(0deg);
+                    @include respond-to(smartphone) {
+                        transform: rotate(0deg) scale(3);
+                    }
                 }
                 .logo {
                     position: static;
@@ -309,6 +320,9 @@ HEADER {
                             transition-delay: $transition-time * $i;
                         }
                     }
+                }
+                @include respond-to(smartphone) {
+                    max-height: 50vh;
                 }
             }
             .search {

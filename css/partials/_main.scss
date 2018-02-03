@@ -34,6 +34,9 @@ MAIN {
 		max-height: 100%;
 		overflow-y: auto;
 		transition: $transition-time opacity;
+		@include respond-to(smartphone) {
+			max-height: none;
+		}
 		&.faded {
 			opacity: 0;
 			transition-delay: $transition-time;

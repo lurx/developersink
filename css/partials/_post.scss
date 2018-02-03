@@ -3,70 +3,65 @@
 	margin: 0 0 $spacing;
 	border-bottom: 2px solid getColor('a');
 	transition: 0.3s padding $transition-delay;
-	
-
-
-
-
 	font-size: 1.25rem;
-		font-weight: 100;
-		P {
-			line-height: 1.5;
-			margin: $spacing 0;
-			text-align: justify;
-		}
-		.code {
-			font-family: 'Source Code Pro', serif;
-		}
-		UL, OL, BLOCKQUOTE {
-			line-height: 1.5;
-		}
-		UL, OL {
-			padding: $spacing*1.5 $spacing*2;
-			margin: $spacing*1.5;
-			line-height: 1.5;
-		}
-		UL {
-			list-style-type: decimal;
-		}
-		blockquote {
-			font-style: italic;
-			position: relative;
-			background: rgba(getColor('fg'), 0.1);
-			padding: $spacing*1.5 $spacing*2;
-			margin: $spacing*1.5 $spacing*1.5 $spacing/2;
+	font-weight: 100;
+	P {
+		line-height: 1.5;
+		margin: $spacing 0;
+		text-align: justify;
+	}
+	.code {
+		font-family: 'Source Code Pro', serif;
+	}
+	UL, OL, BLOCKQUOTE {
+		line-height: 1.5;
+	}
+	UL, OL {
+		padding: $spacing*1.5 $spacing*2;
+		margin: $spacing*1.5;
+		line-height: 1.5;
+	}
+	UL {
+		list-style-type: decimal;
+	}
+	blockquote {
+		font-style: italic;
+		position: relative;
+		background: rgba(getColor('fg'), 0.1);
+		padding: $spacing*1.5 $spacing*2;
+		margin: $spacing*1.5 $spacing*1.5 $spacing/2;
 
-			&:before {
-				content: '\201C';
-				top: -1.5rem;
-				left: -1.5rem;
+		&:before {
+			content: '\201C';
+			top: -1.5rem;
+			left: -1.5rem;
 
-			}
-			&:after {
-				content: '\201D';
-				bottom: -1rem;
-				right: -1.5rem;
-			}
-			&:before, &:after {
-				font-family: Times New Roman, serif;
-				font-size: 5rem;
-				position: absolute;
-			}
 		}
-		.quoteSource {
-			text-align: right;
-			display: block;
-			padding: 0 $spacing*1.5;
-			margin-bottom: $spacing*1.5;
-			font-size: 1rem;
-			&:before {
-				content: 'Source: ';
-				color: rgba(getColor('fg'), 0.5);
-			}
+		&:after {
+			content: '\201D';
+			bottom: -1rem;
+			right: -1.5rem;
 		}
-		.cp_embed_wrapper {
-			padding: $spacing*1.5;
+		&:before, &:after {
+			font-family: Times New Roman, serif;
+			font-size: 5rem;
+			position: absolute;
 		}
+	}
+	.quoteSource {
+		text-align: right;
+		display: block;
+		padding: 0 $spacing*1.5;
+		margin-bottom: $spacing*1.5;
+		font-size: 1rem;
+		&:before {
+			content: 'Source: ';
+			color: rgba(getColor('fg'), 0.5);
+		}
+	}
+	.cp_embed_wrapper {
+		padding: $spacing*1.5;
+	}
 
 
 
@@ -94,6 +89,9 @@
 				padding: 0;
 			}
 		}
+	}
+	@include respond-to(smartphone) {
+		font-size: 2.25rem;
 	}
 }
 
