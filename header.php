@@ -1,7 +1,7 @@
 <input type="checkbox" name="navToggle" id="navToggle" class="navToggle">
 <header>
     <a href="<?php echo get_bloginfo( 'wpurl' );?>" class="innerWrapper">
-        <label for="navToggle" class="logo"><?/*img src="http://blog.rotemdev.com/wp-content/uploads/2017/06/cropped-plumber-icon-white2.png" alt="" /*/?>
+        <label for="navToggle" class="logo">
             <svg>
                 <use xlink:href="#developersink-logo" />
             </svg>

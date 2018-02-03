@@ -8,6 +8,8 @@ MAIN {
 		padding: 0 $spacing/2;
 		height: 100%;
 		font-size: 90vh;
+		//font-family: 'Times New Roman', Times, serif;
+		line-height: 0.9;
 		opacity: 0.25;
 		z-index: -1;
 		@include baseTransition;

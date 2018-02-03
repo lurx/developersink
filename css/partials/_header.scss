@@ -49,15 +49,15 @@ HEADER {
         margin-left: $spacing/2;
         width: 5vw;
         cursor: pointer;
-        animation: 2s wiggle infinite;
-        animation-fill-mode: both;
-        SVG {
+        // animation: 2s wiggle infinite;
+        // animation-fill-mode: both;
+        & > SVG {
             @include baseTransition;
 			max-height: 5vw;
 			max-width: 5vw;
 			transform: rotate(90deg);
 			fill: getColor('fg');
-            @include respond-to(smartphone) {
+			@include respond-to(smartphone) {
                 transform: rotate(0deg);
                 max-height: 25vw;
             }

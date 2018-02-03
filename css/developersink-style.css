@@ -99,17 +99,15 @@ HEADER {
     grid-area: logo;
     margin-left: 0.5rem;
     width: 5vw;
-    cursor: pointer;
-    animation: 2s wiggle infinite;
-    animation-fill-mode: both; }
-    HEADER .logo SVG {
+    cursor: pointer; }
+    HEADER .logo > SVG {
       transition: 0.4s all;
       max-height: 5vw;
       max-width: 5vw;
       transform: rotate(90deg);
       fill: #fff; }
       @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-        HEADER .logo SVG {
+        HEADER .logo > SVG {
           transform: rotate(0deg);
           max-height: 25vw; } }
     @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
@@ -413,6 +411,7 @@ MAIN {
     padding: 0 0.5rem;
     height: 100%;
     font-size: 90vh;
+    line-height: 0.9;
     opacity: 0.25;
     z-index: -1;
     transition: 0.4s all; }

@@ -29,6 +29,10 @@
 		<?php /* FontAwesome 5 Pro: https://fontawesome.com */ ?>
 		<script defer src="<?php echo $theme_url; ?>/vendor/fontawesome-pro-5.0.4/svg-with-js/js/fontawesome-all.js"></script>
 
+		<?php /* prism.js */ ?>
+		<link rel="stylesheet" href="<?php echo $theme_url ?>/vendor/prism/prismjs.css">
+
+
 		<?php wp_head();?>
 	</head>
 	<body>
@@ -53,5 +57,6 @@
 
 		<!-- Scripts -->
 		<script src="<?php echo $theme_url ?>/scripts/index.js"></script>
+		<script src="<?php echo $theme_url ?>/vendor/prism/prismjs.js"></script>
 	</body>
 </html>
